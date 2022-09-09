@@ -11,12 +11,12 @@ terraform {
   backend "s3" {
     bucket = "sample-terraform-bucket-sme-remote-state"
     key    = "pipeline-github-actions/terraform.tfstate"
-
+    region = "ap-southeast-2"
   }
 }
 
 provider "aws" {
-  region = local.region
+  region = "ap-southeast-2"
 
   default_tags {
     tags = {
